@@ -1,3 +1,4 @@
 include:
   - board: nice_nano//zmk
     shield: corne_trackpoint_right
+    snippet: zmk-usb-logging
