@@ -1,0 +1,4 @@
+name: zmk-keyboard-corne-trackpoint
+build:
+  settings:
+    board_root: .
