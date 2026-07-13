@@ -11,6 +11,6 @@ manifest:
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: maged
-      revision: Exp04
+      revision: Exp08
   self:
     path: config
