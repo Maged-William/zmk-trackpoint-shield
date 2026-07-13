@@ -17,6 +17,7 @@
 };
 
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors.dtsi>
 
 &spi0 {
     compatible = "nordic,nrf-spim";
