@@ -3,8 +3,7 @@ if SHIELD_CORNE_TRACKPOINT_RIGHT
 config ZMK_KEYBOARD_NAME
     default "TP Corne"
 
-config ZMK_SPLIT_ROLE_PERIPHERAL
-    default y
+comment "Peripheral role — ZMK_SPLIT_ROLE_CENTRAL not set, so this is a peripheral"
 
 endif
 
