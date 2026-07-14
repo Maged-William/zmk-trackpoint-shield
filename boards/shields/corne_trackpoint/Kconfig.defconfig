@@ -3,7 +3,7 @@ if SHIELD_CORNE_TRACKPOINT_RIGHT
 config ZMK_KEYBOARD_NAME
     default "TP Corne"
 
-config ZMK_SPLIT_ROLE_CENTRAL
+config ZMK_SPLIT_ROLE_PERIPHERAL
     default y
 
 endif

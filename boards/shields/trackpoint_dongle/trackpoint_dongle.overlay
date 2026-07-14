@@ -1,0 +1,5 @@
+#include "../corne_trackpoint/corne_trackpoint.dtsi"
+
+&trackball_listener {
+    status = "okay";
+};
