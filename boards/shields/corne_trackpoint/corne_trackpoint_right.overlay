@@ -73,6 +73,20 @@
 };
 
 / {
+    zip_xy_scaler: zip_xy_scaler {
+        compatible = "zip,xy-scaler";
+    };
+};
+
+/ {
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        input-processors = <&zip_xy_scaler 1 4>;
+    };
+};
+
+/ {
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
