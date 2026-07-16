@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/Maged-William
   projects:
     - name: zmk
-      remote: maged
-      revision: Exp11-queue-input-events
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: maged
