@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: maged
       url-base: https://github.com/Maged-William
+    - name: badjeff
+      url-base: https://github.com/badjeff
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -12,5 +14,11 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: maged
       revision: Exp16
+    - name: zmk-input-processor-report-rate-limit
+      remote: badjeff
+      revision: main
+    - name: zmk-input-processor-xyz
+      remote: badjeff
+      revision: main
   self:
     path: config
