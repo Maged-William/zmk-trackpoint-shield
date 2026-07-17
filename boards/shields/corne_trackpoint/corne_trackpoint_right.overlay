@@ -1,7 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors/report_rate_limit.dtsi>
-#include <input/processors/xyz.dtsi>
 
 / {
     default_transform: keymap_transform0 {
@@ -79,7 +78,7 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_report_rate_limit 4>, <&zip_xyz>;
+        input-processors = <&zip_ble_report_rate_limit 4>;
     };
 };
 
