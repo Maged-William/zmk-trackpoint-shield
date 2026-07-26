@@ -1,0 +1,19 @@
+#include "../corne_trackpoint/corne_trackpoint.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+
+&trackball_listener {
+    status = "okay";
+    input-processors = <&zip_ble_report_rate_limit 4>;
+};
