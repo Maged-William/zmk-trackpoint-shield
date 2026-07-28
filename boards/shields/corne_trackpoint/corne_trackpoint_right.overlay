@@ -36,18 +36,10 @@
     col-offset = <6>;
 };
 
-#ifdef CONFIG_ZMK_SPLIT_ROLE_CENTRAL
-/* Standalone mode: right half is central, listener connects directly to trackball */
 &trackball_listener {
     device = <&trackball>;
     status = "okay";
 };
-#else
-/* Peripheral mode: right half sends events to dongle via split transport */
-&trackball_split {
-    device = <&trackball>;
-};
-#endif
 
 &physical_layout0 {
     kscan = <&kscan0>;
