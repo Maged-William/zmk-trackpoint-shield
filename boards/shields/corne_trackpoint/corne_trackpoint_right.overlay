@@ -41,6 +41,10 @@
     status = "okay";
 };
 
+&trackball_split {
+    device = <&trackball>;
+};
+
 &physical_layout0 {
     kscan = <&kscan0>;
 };
