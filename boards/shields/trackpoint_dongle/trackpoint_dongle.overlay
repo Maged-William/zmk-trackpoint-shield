@@ -1,5 +1,4 @@
 #include "../corne_trackpoint/corne_trackpoint.dtsi"
-#include <input/processors/report_rate_limit.dtsi>
 
 / {
     chosen {
@@ -8,25 +7,5 @@
 
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
-    };
-
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        trackball_split: trackball_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-        };
-    };
-
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball_split>;
-        status = "okay";
-        input-processors = <&zip_ble_report_rate_limit 4>;
     };
 };
