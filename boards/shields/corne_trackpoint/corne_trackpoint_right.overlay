@@ -41,7 +41,6 @@
 &trackball_listener {
     device = <&trackball>;
     status = "okay";
-    input-processors = <&zip_ble_report_rate_limit 4>;
 };
 #else
 /* Peripheral mode: right half sends events to dongle via split transport */
