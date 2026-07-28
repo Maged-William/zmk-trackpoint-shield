@@ -29,6 +29,8 @@
         reg = <0x42>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         reset-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        layer-toggle = <2>;
+        layer-toggle-timeout-ms = <2000>;
     };
 };
 
