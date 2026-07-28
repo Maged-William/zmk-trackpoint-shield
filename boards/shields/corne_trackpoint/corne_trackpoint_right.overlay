@@ -36,16 +36,35 @@
     col-offset = <6>;
 };
 
-&trackball_listener {
-    device = <&trackball>;
-    status = "okay";
-};
-
 &physical_layout0 {
     kscan = <&kscan0>;
 };
 
 / {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_split: trackball_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+#ifdef CONFIG_ZMK_SPLIT_ROLE_CENTRAL
+#else
+            input = <&trackball>;
+#endif
+        };
+    };
+
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+#ifdef CONFIG_ZMK_SPLIT_ROLE_CENTRAL
+        device = <&trackball>;
+#else
+        device = <&trackball_split>;
+#endif
+        status = "okay";
+    };
+
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
