@@ -5,12 +5,15 @@ include:
     artifact-name: corne_trackpoint_right-nice_nano-standalone
   - board: nice_nano//zmk
     shield: corne_trackpoint_right
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    snippet: zmk-usb-logging
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DEXTRA_DTC_OVERLAY_FILE=boards/shields/corne_trackpoint/corne_trackpoint_right_peripheral.overlay
     artifact-name: corne_trackpoint_right-nice_nano-peripheral
   - board: xiao_ble//zmk
     shield: trackpoint_dongle
     snippet: zmk-usb-logging
   - board: nice_nano//zmk
     shield: settings_reset
+    snippet: zmk-usb-logging
   - board: xiao_ble//zmk
     shield: settings_reset
+    snippet: zmk-usb-logging
