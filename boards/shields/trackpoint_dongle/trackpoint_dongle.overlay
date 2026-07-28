@@ -11,8 +11,14 @@
         rows = <0>;
         events = <0>;
     };
+
+    temp_layer: temp_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        status = "okay";
+    };
 };
 
 &trackball_listener {
+    input-processors = <&temp_layer 2 2000>;
     status = "okay";
 };
