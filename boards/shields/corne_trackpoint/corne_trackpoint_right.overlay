@@ -39,7 +39,10 @@
     status = "okay";
 };
 #else
-/* Peripheral: listener reads from split (which forwards via BLE) */
+/* Peripheral: split forwards trackball data to dongle */
+&trackball_split {
+    device = <&trackball>;
+};
 &trackball_listener {
     status = "okay";
 };
