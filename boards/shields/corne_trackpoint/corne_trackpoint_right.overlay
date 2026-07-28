@@ -48,7 +48,7 @@
         trackball_split: trackball_split@0 {
             compatible = "zmk,input-split";
             reg = <0>;
-#ifdef CONFIG_ZMK_SPLIT_ROLE_CENTRAL
+#if CONFIG_ZMK_SPLIT_ROLE_CENTRAL
 #else
             device = <&trackball>;
 #endif
@@ -57,7 +57,7 @@
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
-#ifdef CONFIG_ZMK_SPLIT_ROLE_CENTRAL
+#if CONFIG_ZMK_SPLIT_ROLE_CENTRAL
         device = <&trackball>;
 #else
         device = <&trackball_split>;
