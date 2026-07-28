@@ -32,13 +32,24 @@
     };
 };
 
-&default_transform {
-    col-offset = <6>;
-};
-
+#if CONFIG_ZMK_SPLIT_ROLE_CENTRAL
+/* Standalone: listener reads trackball directly */
 &trackball_listener {
     device = <&trackball>;
     status = "okay";
+};
+#else
+/* Peripheral: split forwards trackball data to dongle */
+&trackball_split {
+    input = <&trackball>;
+};
+&trackball_listener {
+    status = "okay";
+};
+#endif
+
+&default_transform {
+    col-offset = <6>;
 };
 
 &physical_layout0 {

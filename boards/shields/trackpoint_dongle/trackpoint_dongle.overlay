@@ -15,5 +15,4 @@
 
 &trackball_listener {
     status = "okay";
-    input-processors = <&zip_ble_report_rate_limit 4>;
 };
