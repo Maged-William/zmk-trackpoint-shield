@@ -33,9 +33,16 @@
 };
 
 #if CONFIG_ZMK_SPLIT_ROLE_CENTRAL
-/* Standalone: listener reads trackball directly */
+/* Central (no dongle): listener reads trackball directly + layer-toggle */
+temp_layer: temp_layer {
+    compatible = "zmk,input-processor-temp-layer";
+    #input-processor-cells = <2>;
+    status = "okay";
+};
+
 &trackball_listener {
     device = <&trackball>;
+    input-processors = <&temp_layer 2 2000>;
     status = "okay";
 };
 #else

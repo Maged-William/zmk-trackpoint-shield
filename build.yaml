@@ -2,18 +2,7 @@ include:
   - board: nice_nano//zmk
     shield: corne_trackpoint_right
     snippet: zmk-usb-logging
-    artifact-name: corne_trackpoint_right-nice_nano-standalone
+    artifact-name: corne_trackpoint_right-nice_nano-central
   - board: nice_nano//zmk
-    shield: corne_trackpoint_right
-    snippet: zmk-usb-logging
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-    artifact-name: corne_trackpoint_right-nice_nano-peripheral
-  - board: xiao_ble//zmk
-    shield: trackpoint_dongle
-    snippet: zmk-usb-logging
-  - board: nice_nano//zmk
-    shield: settings_reset
-    snippet: zmk-usb-logging
-  - board: xiao_ble//zmk
     shield: settings_reset
     snippet: zmk-usb-logging
