@@ -42,10 +42,12 @@
 };
 #else
 /* Central / standalone (no split): listener reads trackball directly + layer-toggle */
-temp_layer: temp_layer {
-    compatible = "zmk,input-processor-temp-layer";
-    #input-processor-cells = <2>;
-    status = "okay";
+/ {
+    temp_layer: temp_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        status = "okay";
+    };
 };
 
 &trackball_listener {
