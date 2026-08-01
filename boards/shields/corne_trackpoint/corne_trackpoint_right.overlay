@@ -32,8 +32,16 @@
     };
 };
 
-#if CONFIG_ZMK_SPLIT_ROLE_CENTRAL
-/* Central (no dongle): listener reads trackball directly + layer-toggle */
+#if defined(CONFIG_ZMK_SPLIT_ROLE_PERIPHERAL) && CONFIG_ZMK_SPLIT_ROLE_PERIPHERAL
+/* Peripheral: split forwards trackball data to dongle */
+&trackball_split {
+    device = <&trackball>;
+};
+&trackball_listener {
+    status = "okay";
+};
+#else
+/* Central / standalone (no split): listener reads trackball directly + layer-toggle */
 temp_layer: temp_layer {
     compatible = "zmk,input-processor-temp-layer";
     #input-processor-cells = <2>;
@@ -43,14 +51,6 @@ temp_layer: temp_layer {
 &trackball_listener {
     device = <&trackball>;
     input-processors = <&temp_layer 2 2000>;
-    status = "okay";
-};
-#else
-/* Peripheral: split forwards trackball data to dongle */
-&trackball_split {
-    device = <&trackball>;
-};
-&trackball_listener {
     status = "okay";
 };
 #endif
