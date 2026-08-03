@@ -22,7 +22,7 @@
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <100000>;
+    clock-frequency = <50000>;
 
     trackball: trackball@42 {
         compatible = "promini,trackpoint-i2c";
