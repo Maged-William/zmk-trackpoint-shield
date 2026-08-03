@@ -17,29 +17,18 @@
 };
 
 &i2c0 {
-    status = "disabled";
-};
+    compatible = "nordic,nrf-twim";
+    status = "okay";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <100000>;
 
-/* Exp44: the ATtiny85 USI slave cannot keep up with the nRF TWIM's byte
- * timing (it cannot clock-stretch). Use a bit-banged GPIO I2C bus at 20kHz
- * instead — software timing gives the USI all the inter-byte gaps it needs. */
-/ {
-    i2c_trackball: i2c-gpio-trackball {
-        compatible = "gpio-i2c";
-        status = "okay";
-        sda-gpios = <&gpio0 17 (GPIO_OPEN_DRAIN | GPIO_PULL_UP)>;
-        scl-gpios = <&gpio0 20 (GPIO_OPEN_DRAIN | GPIO_PULL_UP)>;
-        clock-frequency = <20000>;
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        trackball: trackball@42 {
-            compatible = "promini,trackpoint-i2c";
-            status = "okay";
-            reg = <0x42>;
-            irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-            reset-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        };
+    trackball: trackball@42 {
+        compatible = "promini,trackpoint-i2c";
+        reg = <0x42>;
+        irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        reset-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 };
 
