@@ -13,7 +13,7 @@ manifest:
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: maged
-      revision: 51273c5b94739c977782e1a2984ca0599ee1cb46
+      revision: e93bb72e782550074ab4444a154e549f82d15795
     - name: zmk-input-processor-report-rate-limit
       remote: badjeff
       revision: main
