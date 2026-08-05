@@ -2,7 +2,12 @@ include:
   - board: nice_nano//zmk
     shield: corne_trackpoint_right
     snippet: zmk-usb-logging
-    artifact-name: corne_trackpoint_right-nice_nano-central
+    artifact-name: corne_trackpoint_right-nice_nano-poweron
+  - board: nice_nano//zmk
+    shield: corne_trackpoint_right
+    snippet: zmk-usb-logging
+    cmake-args: -DCONFIG_ZMK_EXT_POWER=n
+    artifact-name: corne_trackpoint_right-nice_nano-poweroff
   - board: nice_nano//zmk
     shield: settings_reset
     snippet: zmk-usb-logging

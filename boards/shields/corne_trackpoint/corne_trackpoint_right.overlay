@@ -83,4 +83,11 @@
             , <&gpio1 11 GPIO_ACTIVE_HIGH>
             ;
     };
+
+    ext_power: ext_power {
+        compatible = "zmk,ext-power-generic";
+        control-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>,   /* PNP base: LOW = VCC to Pro Mini */
+                        <&gpio0 6 GPIO_ACTIVE_HIGH>;  /* NPN base: HIGH = GND to Pro Mini */
+        init-delay-ms = <500>;
+    };
 };
