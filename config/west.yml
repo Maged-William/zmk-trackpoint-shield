@@ -1,0 +1,24 @@
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: maged
+      url-base: https://github.com/Magid-William
+    - name: badjeff
+      url-base: https://github.com/badjeff
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: fa33e35f11d2b15311973cda9fb89dcd2376888c
+      import: app/west.yml
+    - name: zmk-trackpoint-driver
+      remote: maged
+      revision: e5234665db3ecc88c6fc1108a0b4214103b6f27e
+    - name: zmk-input-processor-report-rate-limit
+      remote: badjeff
+      revision: main
+    - name: zmk-input-processor-xyz
+      remote: badjeff
+      revision: main
+  self:
+    path: config

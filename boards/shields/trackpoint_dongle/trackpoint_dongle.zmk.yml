@@ -1,0 +1,9 @@
+file_format: "1"
+id: trackpoint_dongle
+name: Trackpoint Dongle
+type: shield
+url: https://github.com/Maged-William/zmk-trackpoint-shield
+requires: [seeed_xiao]
+features:
+  - keys
+  - pointing

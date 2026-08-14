@@ -1,0 +1,25 @@
+#include "../corne_trackpoint/corne_trackpoint.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+
+    temp_layer: temp_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        status = "okay";
+    };
+};
+
+&trackball_listener {
+    input-processors = <&temp_layer 2 2000>;
+    status = "okay";
+};

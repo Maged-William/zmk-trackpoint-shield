@@ -1,0 +1,16 @@
+if SHIELD_CORNE_TRACKPOINT_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "TP Corne"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_CORNE_TRACKPOINT_RIGHT || SHIELD_CORNE_TRACKPOINT_LEFT
+
+config ZMK_SPLIT
+    default y
+
+endif
