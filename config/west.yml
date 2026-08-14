@@ -11,9 +11,9 @@ manifest:
       remote: zmkfirmware
       revision: fa33e35f11d2b15311973cda9fb89dcd2376888c
       import: app/west.yml
-    - name: zmk-pmw3610-driver
+    - name: zmk-trackpoint-driver
       remote: maged
-      revision: 6f84b6236f1ac85a7c77a9fbcadb871406a7db50
+      revision: e5234665db3ecc88c6fc1108a0b4214103b6f27e
     - name: zmk-input-processor-report-rate-limit
       remote: badjeff
       revision: main
